@@ -1,0 +1,7 @@
+potassium
+torch
+transformers
+langchain
+einops
+accelerate
+xformers
