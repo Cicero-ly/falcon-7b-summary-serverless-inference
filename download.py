@@ -1,12 +1,12 @@
 # This file runs during container build time to get model weights built into the container
 
 # In this example: A Huggingface BERT model
-from transformers import AutoTokenizer, pipeline
+import transformers
 import torch
 def download_model():
     # do a dry run of loading the huggingface model, which will download weights
-    tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-7b-instruct")
-    pipeline = pipeline(
+    tokenizer = transformers.AutoTokenizer.from_pretrained("tiiuae/falcon-7b-instruct")
+    pipeline = transformers.pipeline(
         "text-generation",
         model="tiiuae/falcon-7b-instruct",
         tokenizer=tokenizer,
