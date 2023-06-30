@@ -1,6 +1,6 @@
 from potassium import Potassium, Request, Response
 
-from transformers import AutoTokenizer, pipeline
+import transformers
 import torch
 from langchain.llms import HuggingFacePipeline
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -40,8 +40,8 @@ def init():
     device = 0 if torch.cuda.is_available() else -1
     model = "tiiuae/falcon-7b-instruct"
 
-    tokenizer = AutoTokenizer.from_pretrained(model)
-    pipeline = pipeline(
+    tokenizer = transformers.AutoTokenizer.from_pretrained(model)
+    pipeline = transformers.pipeline(
         "text-generation",
         model=model,
         tokenizer=tokenizer,
