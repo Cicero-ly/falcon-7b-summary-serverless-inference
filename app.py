@@ -5,6 +5,8 @@ import torch
 from langchain.llms import HuggingFacePipeline
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
+import sys
+sys.path.append("/")
 
 app = Potassium("my_app")
 
