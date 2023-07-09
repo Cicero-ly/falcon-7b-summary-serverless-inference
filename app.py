@@ -6,10 +6,10 @@ from langchain.llms import HuggingFacePipeline
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
 import sys
-sys.path.append("/")
+
 
 app = Potassium("my_app")
-
+sys.path.append("/")
 def summarize_thought(x, llm):
 
   text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
